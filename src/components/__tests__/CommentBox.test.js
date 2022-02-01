@@ -28,4 +28,10 @@ it('has a text area that users can type in', () => {
     wrapped.find('textarea').simulate('change', {
         target: { value: 'new comment' }
     });
+
+// Force component to rerender so a new value is shoved into the 
+// text area using .update() and .prop(key)
+    wrapped.update();
+
+    expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
 });
