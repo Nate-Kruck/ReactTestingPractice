@@ -1,1 +1,1 @@
-Practicing testing components in React.
+React testing practice.
