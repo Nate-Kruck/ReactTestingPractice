@@ -19,4 +19,13 @@ afterEach(() => {
 it('has a text area and a button', () => {
     expect(wrapped.find('textarea').length).toEqual(1);
     expect(wrapped.find('button').length).toEqual(1);
-})
+});
+
+
+// simulating a change event to make the text area think a user has typed 
+// in the text box using .simulate(event[, mock] => Self)
+it('has a text area that users can type in', () => {
+    wrapped.find('textarea').simulate('change', {
+        target: { value: 'new comment' }
+    });
+});
