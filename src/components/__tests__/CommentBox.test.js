@@ -24,14 +24,23 @@ it('has a text area and a button', () => {
 
 // simulating a change event to make the text area think a user has typed 
 // in the text box using .simulate(event[, mock] => Self)
-it('has a text area that users can type in', () => {
+describe('the text area', () => {
+    beforeEach(() => {
     wrapped.find('textarea').simulate('change', {
         target: { value: 'new comment' }
+        });
+    wrapped.update();
     });
 
+    it('has a text area that users can type in', () => {
 // Force component to rerender so a new value is shoved into the 
 // text area using .update() and .prop(key)
-    wrapped.update();
-
     expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
+    });
+
+    it('when form is submitted, text area gets emptied', () => {
+    wrapped.find('form').simulate('submit');
+    wrapped.update();
+    expect(wrapped.find('textarea').prop('value')).toEqual('');
+    });
 });
