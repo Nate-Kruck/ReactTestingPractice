@@ -11,10 +11,10 @@ import reducers from 'reducers';
 // with the redux store.
 // And on the fly we can swap the component that will
 // be placed in the provider tag.
-export default (props) => {
+export default ({ children, intitialState = {} }) => {
     return (
-        <Provider store={createStore(reducers, {})}>
-            {props.children}
+        <Provider store={createStore(reducers, intitialState)}>
+            {children}
         </Provider>
-    )
-}
+    );
+};
