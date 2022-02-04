@@ -12,10 +12,11 @@ beforeEach(() => {
     </Root>);
 })
 
-// Note: unlike shallow or static rendering, full rendering actually
-// mounts the component in the DOM, which means that tests can affect each // other if they are all using the same DOM. Keep that in mind while
-// writing your tests and, if necessary, use .unmount() or something
-// similar as cleanup.
+// Note: unlike shallow or static rendering, full rendering 
+// actually mounts the component in the DOM, which means that 
+// tests can affect each other if they are all using the same 
+// DOM. Keep that in mind while writing your tests and, if 
+// necessary, use .unmount() or something similar as cleanup.
 afterEach(() => {
     wrapped.unmount(<CommentBox />)
 })
@@ -26,8 +27,9 @@ it('has a text area and a button', () => {
 });
 
 
-// simulating a change event to make the text area think a user has typed 
-// in the text box using .simulate(event[, mock] => Self)
+// simulating a change event to make the text area think a user 
+// has typed in the text box using 
+// .simulate(event[, mock] => Self)
 describe('the text area', () => {
     beforeEach(() => {
     wrapped.find('textarea').simulate('change', {

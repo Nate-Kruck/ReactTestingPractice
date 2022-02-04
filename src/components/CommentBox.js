@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 
-// add class based component that is responsible for watching input for a
-// user
+// add class based component that is responsible for watching 
+// input for a user
 
 class CommentBox extends Component {
     state = { comment: '' };
